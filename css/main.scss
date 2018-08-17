@@ -1,58 +1,109 @@
+// House Keeping
 *, *:after, *:before {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     backface-visibility: hidden;
+    font-family: sans-serif;
 }
-// Mobile First CSS
-header {
-    position: relative;
-    width: 100%;
-    background: rgba(8, 204, 178, 1);
-    position: relative;
-    box-shadow: 0px 5px 15px rgba(8, 204, 178, 1);
-    .logo-link {
-        margin: 0 auto;
-        display: table;
-        .logo {
-            max-width: 100%;
-            height: 100px;
-        }
-    }
-    ul.nav-list {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 10px 0px 0px;
-        a {
-            text-decoration: none;
-            color: black;
-            text-transform: uppercase;
-            font-size: 14px;
-            transition: .2s all ease-in-out;
-            &:hover {
-                color: rgba(8, 204, 178, 1);
-            }
-        }
-        li {
-            list-style: none;
-            margin: 5px;
-            margin-bottom: 10px;
-        }
-        .sub-menu {
-            display: none;
-        }
-    }
+* > a {
+    text-decoration: none;
 }
+// Variables
+$font-1: 'Orbitron', sans-serif;
+$blue-1: rgba(8, 204, 178, 1);
+$blue-2-light: rgba(8, 204, 178, 0.5);
+$blue-2-lightest: rgba(8, 204, 178, 0.2);
+// Mixins
 
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Orbitron:400,900');
+
+// Other? IDK, kay!
+
+// Buttons
+a.ld-btn--1 {
+    display: inline-block;
+    width: 230px;
+    height: 50px;
+    border-radius: 12px / 3px;
+    background: rgba(8, 204, 178, 0.8);
+    color: black;
+    transition: .4s all ease-in-out;
+    margin: 15px auto;
+    padding: 0; // dont be dumb!
+    line-height: 50px;
+    font-size: calc(50px / 2);
+    text-transform: uppercase;
+    &:hover {
+        box-shadow: 0px 0px 20px rgba(8, 204, 188, 1);
+    }
+}
+a.ld-btn--2 { // ooooh, i am fancy!
+    display: inline-block;
+    width: 150px;
+    height: 35px;
+    line-height: 35px;
+    background: rgb(6, 224, 195);
+    color: white;
+    font-size: calc(35px / 1.5);
+    transition: .2s all cubic-bezier(0.19, 1, 0.22, 1);
+    text-transform: uppercase;
+    border-bottom: 5px solid black;
+    &:hover {
+        box-shadow: 0px 0px 20px rgba(8, 204, 188, 1);
+    }
+} 
+// other buttons will come, just chill.
+
+// Hero section with Navigation
 .hero-section {
     position: relative;
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                url('/img/screen.jpg');
+                url('/img/plan_design.jpg');
     background-size: cover;
     background-position: center;
+    #masthead {
+        position: relative;
+        width: 100%;
+        background: rgba(8, 204, 178, 0.3);
+        position: relative;
+        box-shadow: 0px 5px 15px $blue-1;
+        .logo-link {
+            margin: 0 auto;
+            display: table;
+            .logo {
+                max-width: 100%;
+                height: 100px;
+            }
+        }
+        ul.nav-list {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0px 0px;
+            a {
+                text-decoration: none;
+                color: black;
+                text-transform: uppercase;
+                font-size: 14px;
+                transition: .2s all ease-in-out;
+                &:hover {
+                    color: $blue-1;
+                }
+            }
+            li {
+                list-style: none;
+                margin: 5px;
+                margin-bottom: 10px;
+            }
+            .sub-menu {
+                display: none;
+            }
+        }
+    }
     .wrapper {
         position: absolute;
         top: 50%;
@@ -65,24 +116,62 @@ header {
             position: relative;
             color: white;
             h3 {
-                font-size: 35px;
+                font-size: 25px;
+                font-family: $font-1;
+                text-transform: uppercase;
+                margin-bottom: 10px;
             }
             p {
                 font-size: 18px;
-            }
-            a {
-                display: inline-block;
-                margin: 10px auto;
-                width: 160px;
-                height: 50px;
-                line-height: 50px;
-                text-align: center;
-                background: black;
-                color: white;
-                backface-visibility: hidden;
-                text-decoration: none;
-                cursor: recticle;
+                border-left: 10px white solid;
+                line-height: 20px;
+                padding: 2px;
             }
         }
     }
 }
+
+// Main Content
+// Section 1
+#section1 {
+    position: relative;
+    width: 100%;
+    .col {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 3px 0px;
+        padding: 20px 0px;
+        i, p, h4 {
+            margin-bottom: 10px;
+            padding: 0px 30px;
+        }
+        h4 {
+            font-family: $font-1;
+            font-weight: 500;
+            font-size: 20px;
+            position: relative;
+            &:after {
+                content: "";
+                display: block;
+                width: 10%;
+                background: $blue-1;
+                height: 2px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+// Section 2
+#section2 {
+    position: relative;
+    width: 100%;
+    .img-brag img {
+        max-width: 90%;
+        display: block;
+        margin: 10px auto;
+    }
+}
+// Section 3
