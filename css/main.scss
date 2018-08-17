@@ -21,6 +21,29 @@ $blue-2-lightest: rgba(8, 204, 178, 0.2);
 
 // Other? IDK, kay!
 
+// HEaDINGS
+
+.heading-1 {
+    font-size: 30px;
+    text-align: center;
+    font-family: $font-1;
+    position: relative;
+    margin: 20px 0px;
+    text-transform: uppercase;
+    &:after {
+        content: "";
+        display: block;
+        width: 10%;
+        background: $blue-1;
+        height: 2px;
+        margin: 0 auto;
+        transition: .3s all ease-in-out;
+        &::hover {
+            width: 40%;
+        }
+    }
+}
+
 // Buttons
 a.ld-btn--1 {
     display: inline-block;
@@ -68,8 +91,9 @@ a.ld-btn--2 { // ooooh, i am fancy!
         position: relative;
         width: 100%;
         background: rgba(8, 204, 178, 0.3);
-        position: relative;
+        position: fixed;
         box-shadow: 0px 5px 15px $blue-1;
+        z-index: 5;
         .logo-link {
             margin: 0 auto;
             display: table;
@@ -130,8 +154,7 @@ a.ld-btn--2 { // ooooh, i am fancy!
         }
     }
 }
-
-// Main Content
+// ## -- Main Content
 // Section 1
 #section1 {
     position: relative;
@@ -163,15 +186,29 @@ a.ld-btn--2 { // ooooh, i am fancy!
         }
     }
 }
-
-// Section 2
+// ## Section 2
 #section2 {
     position: relative;
     width: 100%;
-    .img-brag img {
-        max-width: 90%;
-        display: block;
-        margin: 10px auto;
+    .img-brag figure {
+        margin-bottom: 10px;
+        img {
+            max-width: 90%;
+            display: block;
+            margin: 0px auto;
+            position: relative;
+        }
+        figcaption {
+            text-align: center;
+            background: black;
+            color: white;
+            width: 90%;
+            margin: 0 auto;
+            padding: 10px 0;
+        }
     }
 }
-// Section 3
+// ## Section 3
+#section3 {
+
+}
